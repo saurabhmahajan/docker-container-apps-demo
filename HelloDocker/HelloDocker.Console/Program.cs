@@ -12,15 +12,27 @@ public class Program
         _connectionString = Environment.GetEnvironmentVariable("DB_CONN");
         _clientId = Environment.GetEnvironmentVariable("CLIENT_ID");
 
-        if (string.IsNullOrEmpty(_connectionString))
-            _connectionString =
-                "Server=tcp:algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$Pr0f!7@2022@!#;MultipleActiveResultSets=true;";
+        System.Console.WriteLine($"DB_CONN = {_connectionString}");
+        System.Console.WriteLine($"CLIENT_ID = {_clientId}");
 
-        if (string.IsNullOrEmpty(_clientId)) _clientId = "A12345";
+
+        //if (string.IsNullOrEmpty(_connectionString))
+        //    _connectionString =
+        //        "Server=tcp:algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$Pr0f!7@2022@!#;MultipleActiveResultSets=true;";
+
+        //if (string.IsNullOrEmpty(_clientId)) _clientId = "A12345";
 
         for (int i = 0; i < 5; i++)
         {
-            LogToDatabase(i);
+
+            try
+            {
+                LogToDatabase(i);
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e);
+            }
             Thread.Sleep(10000);
         }
     }

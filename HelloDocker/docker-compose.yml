@@ -2,21 +2,21 @@ version: '3.4'
 
 services:
   hellodocker-console-1:
-    image: saurabhalgocontainerregistry.azurecr.io/hellodockerconsole:latest
+    image: saurabhacidemo2.azurecr.io/hellodockerconsole:latest
     build:
       context: .
       dockerfile: HelloDocker.Console/Dockerfile
     environment:
       - CLIENT_ID=YY9663
-      - DB_CONN=Server=tcp:algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$$Pr0f!7@2022@!#;MultipleActiveResultSets=true;
+      - DB_CONN=Server=algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$$Pr0f!7@2022@!#;MultipleActiveResultSets=true;
 
   hellodocker-console-2:
-    image: saurabhalgocontainerregistry.azurecr.io/hellodockerconsole:latest
+    image: saurabhacidemo2.azurecr.io/hellodockerconsole:latest
     build:
       context: .
       dockerfile: HelloDocker.Console/Dockerfile
     environment:
       - CLIENT_ID=ABCDEF
-      - DB_CONN=Server=tcp:algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$$Pr0f!7@2022@!#;MultipleActiveResultSets=true;
+      - DB_CONN=Server=algo-db-server.database.windows.net,1433;Database=algo-db;User ID=algo_user;Password=$$Pr0f!7@2022@!#;MultipleActiveResultSets=true;
 
 
